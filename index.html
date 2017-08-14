@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
+			<SCRIPT TYPE="text/javascript" src="js/phonegap-1.4.1.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="js/bootstrap.min.js"></SCRIPT>
+		<script type="text/javascript" src="cordova.js"></script> 
+		<script type="text/javascript" src="js/main.js"></script>	
+		
+       <script>
+		function twitter(){appAvailability.check("com.twitter.android",function(){window.open("twitter://user?screen_name=lidera_","_system","location=yes")},function(){window.open("https://twitter.com/lidera_","_system","location=yes")})}
+		function facebook(){appAvailability.check("com.facebook.katana",function(){window.open("fb://facebook.com/Contacto-CON-La-Noticia-1598648800448927/?ref=br_rs","_system","location=yes")},function(){window.open("https://www.facebook.com/Contacto-CON-La-Noticia-1598648800448927/","_system","location=yes")})}</script>
+	   </script>
+		
+    </head>
+	<body >
+	 <!------------Pagina Principal------- -->
+		<div data-role="page" id="principal" data-title="Principal">
+			
+			<div id="header" data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" >
+				<div class="col-xs-2">
+					
+				</div>
+				<div class="col-xs-10">
+					<img src="img/logo.png" class="img-responsive">
+				</div>
+					
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<div id="cargando" class="cargando" ><img  src="img/load.gif" >
+				<p>Cargando...</p>
+				<p>Espere,por favor. </p>
+				
+				</div>
+				 
+				<div class="carusel">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" role="listbox">
+							
+						</div>
+						<a class="left carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
+							<span class="icon-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
+							<span class=" icon-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<div class="row" id="secundarias-inicial"></div>
+				<div class="opciones row">
+					
+					
+					<div class="col-xs-4 ">	<a href="#" onclick="facebook()" ><img class="img-responsive" src="img/facebook.png"></a></div>	
+					<div class="col-xs-4 "><a href="#"  target="_system" onclick="twitter()"><img class="img-responsive" src="img/twitter.png"></a></div>	
+					<div class="col-xs-4 "><a href="#"  target="_system" onclick="twitter()"><img class="img-responsive" src="img/youtube.png"></a></div>	
+					<div class="col-xs-4"><a href="#" onclick="window.open('http://www.streaminglocucionar.com.ar/portal/?p=9923','_system','location=yes')"><img class="img-responsive" src="img/play.png"></a></div>
+					<div class="col-xs-4">
+						<a href="#tiempopopular" data-transition='flip'>
+							<img class="img-responsive" src="img/radio_sol.png">
+						</a>
+					</div>	
+					<div class="col-xs-4"><a href="#" onclick="window.open('https://play.google.com/store/apps/details?id=com.cqsoluciones.radio.solaimogasta','_system','location=yes')"><img class="img-responsive" src="img/playstore.png"></a></div>
+					
+					<div class="col-xs-4"><a href="#contacto"  ><img class="img-responsive" src="img/email.png"></a></div>
+					<div class="col-xs-4"><a href="tel:+543804490111"><img class="img-responsive" src="img/telefono.png"></a></div>
+					<div class="col-xs-4">
+						<a href="#tiempopopular" data-transition='flip'>
+							<img class="img-responsive" src="img/vota.png">
+						</a>
+					</div>	
+					
+				</div>
+					
+			</div>
+			<div class="footer" data-role="footer" >
+				
+					<img src="img/logo.png" class="img-responsive">
+				
+			</div>
+				
+		</div>
+		
+		
+		<div data-role="page" id="tiempopopular"  data-title="">
+		
+		<script> 
+			todas();
+			
+			function todas() 
+				{
+					$("#primera").html("");
+					$("#secundarias").html("");
+						archivoValidacion = "http://www.radiosolaimogasta.com.ar/appc/principal.php?jsoncallback=?"
+
+
+					$.getJSON( archivoValidacion, {id:1})
+
+					.done(function(data2) {
+					
+					/*$("#cargando").css("display","none");*/
+						$(data2).each(function (index, data2) {
+							$("#primera").append(
+						
+							"<a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+							"<H1 class='titulo_primera'>"+data2.titulo+"</h1>"+
+							"<div style='float: right;   position: absolute;'>"+
+								"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+								"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+								"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+							"<img class='img-responsive' src='http://radiosolaimogasta.com.ar/imagenes/"+data2.url+"_400.jpg'>"+
+							" </a> <hr>"
+							);
+						});
+						$("#cargando2").css("display","none");
+						
+					})
+	
+									.error( function(data2) { 
+									$("#cargando2").css("display","block");
+									$("#cargando2").append("<p>Compruebe su conexion a internet</p>"); } )
+
+					$.getJSON( archivoValidacion, {id:2})
+
+						.done(function(data2) {
+										
+										/*$("#cargando").css("display","none");*/
+											$(data2).each(function (index, data2) {
+												$("#secundarias").append(
+											"<span class='title-categoria'>LOCALES</span>"+			
+															"<div class='row'><a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+														
+												"<div class='col-xs-12 col-sm-12'><div class='box-img-secundarias'><img  class='img-responsive' src='http://radiosolaimogasta.com.ar/imagenes/"+data2.url+"_400.jpg'></div>"+
+												"<div class='box-titulo-secundarias'><H1 class='titulo_segundas'>"+data2.titulo+"</h1></div></div>"+
+												"<div class='redes'>"+
+													"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+													"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+													"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+												"</a></div> <hr>"
+																	
+												);
+											});
+											$("#cargando").css("display","none");
+											
+										})
+											$.getJSON( archivoValidacion, {id:3})
+
+										.done(function(data2) {
+									
+										/*$("#cargando").css("display","none");*/
+											$(data2).each(function (index, data2) {
+										
+												$("#infogral").append(
+												"<span class='title-categoria'>PROVINCIALES</span>"+			
+															"<div class='row'><a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+														
+												"<div class='col-xs-12 col-sm-12'><div class='box-img-secundarias'><img  class='img-responsive' src='http://radiosolaimogasta.com.ar/imagenes/"+data2.url+"_400.jpg'></div>"+
+												"<div class='box-titulo-secundarias'><H1 class='titulo_segundas'>"+data2.titulo+"</h1></div></div>"+
+												"<div class='redes'>"+
+													"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+													"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+													"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+												"</a></div> <hr>"
+																	
+																	);
+											
+											
+											});
+											$("#cargando").css("display","none");
+										
+										})
+		
+				}	
+		</script>
+			
+			<div  id="header"  data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+				<div class="col-xs-2 col-sm-2">	
+				
+				</div>
+				<div class="col-xs-7 col-sm-7">
+					<img src="img/logo.png">
+				
+				</div>	
+				<div class="col-xs-3 col-sm-3">
+					<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<div id="cargando2" class="cargando" ><img  src="img/load.gif" ><p>Cargando...</p></div>
+				<div class="col-lg-12 logo">
+					
+					<p >
+						<a class="web" href="http://www.radiosolaimogasta.com.ar" target="_system"  onclick="todas()"><span class="icon-web"></span> Ver Web </a>
+					</p>
+				</div>
+				<div class="row" id="primera"></div>	
+				<div class="row" id="secundarias"></div>
+				<div class="row" id="infogral">
+				<span class="title-categoria">LOCALES</span>
+				</div>
+				
+			</div>
+			<div data-role="footer" >
+				<p >
+					<a class="web" href="http://www.radiosolaimogasta.com.ar" target="_system"  onclick="todas()"><span class="icon-web"></span> Ver Web </a>
+				</p>
+			</div>
+		</div>
+		
+		<!------------Pagina Noticia Indivudual--------->
+	<div data-role="page"   id="noticia1">
+	
+			
+		<div  id="header"  data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+				<div class="col-xs-2 col-sm-2">	
+				
+				</div>
+				<div class="col-xs-7 col-sm-7">
+					<img src="img/logo.png">
+				
+				</div>	
+				<div class="col-xs-3 col-sm-3">
+					<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<div class="col-lg-12 logo">
+					<img class="img-responsive"  src="img/tiempo-popular.png">
+				</div>
+				<div id="noticia"></div>
+			</div>
+			<div data-role="footer" data-id="fijo"  >
+			
+				<div id="iconos">
+					
+				</div>
+			</div>
+	</div>
+
+	<!------------Pagina Contacto--------->
+	<div data-role="page" id="contacto">
+			
+			<div  id="header"  data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">	
+
+				<div class="col-xs-9">
+					<img src="img/logo.png">
+				</div>	
+				<div class="col-xs-3">
+						<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>		
+						
+					
+			</div>
+			<div data-role="content" class="ui-fondo"  data-theme="fondo">
+			<h4> Contáctese con nosotros </h4>	
+				<div class="col-lg-12">
+					<div id="alertaco" style="display:none;"	class="alert alert-success" role="alert"></div>
+					
+					<div class="form-group">
+						<input type="text"  class="form-control"  id="nombre" placeholder="Ingrese su Nombre">
+					</div>
+					<div class="form-group">
+						<textarea name="" id="mensaje" placeholder="Ingrese su mensaje" rows="5" data-mini="false"></textarea>
+					</div>
+				   <div class="form-group">
+						<input id="btnDefaultSMS"  class="btn-contacto" onclick="enviarcorreo()" type="submit"   value="Enviar" >
+					</div>
+				</div>
+				<div class="col-lg-12" style="   padding: 20px;">
+					<p><a href="tel:+543804490111">380-4490111</a></p>
+					<p><a href="tel:+543804490277">380-4490277</a></p>
+					<p>TV: <a href="tel:+543804562200">380-4562200</a></p>
+					<p>SMS Radio: <a href="sms:+543804531716">380-4531716</a></p>
+					<p>Whatsapp: <a onclick="whatsapp();" target="_system">380-4236675</a></p>
+					<p><a href="mailto:mediosprovincia-prensa@hotmail.com">mediosprovincia-prensa@hotmail.com</a></p>
+				</div>
+			</div>
+	</div>
+	</body>
+</html>
+
+   <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+		
+		
+		init();
+	
+	
+        </script>
+	
+		<script>
+			$(document).ready(function(){
+			alto=$( window ).height();
+			centro=alto/3;
+			centro2=centro;
+			$("#cargando").css("min-height",alto);
+			$("#cargando2").css("min-height",alto);
+			$("#myCarousel").carousel({interval: 5000, pause: "hover"});
+			})
+			
+			function whatsapp(){
+			
+			cordova.plugins.Whatsapp.send("+5493804499197");
+			}
+			
+			function cargarview(){
+			$("#cargando").html("");
+	
+			$("#cargando").css("display","block");
+			$("#cargando").append("<img  src='img/load.gif'>"); 
+			$("#cargando").append("<p>Cargando...</p>"); 
+			$("#cargando").css("height","980px");
+			$("#cargando").css("background","rgba(7, 7, 7, 0.57)");
+			$("#cargando").css("padding-top","400px");
+			$("#cargando").css("font-size","25px");
+			
+			$("#cargando").css("color","white");
+			
+			}
+			
+			
+		</script>
+		
+</html>

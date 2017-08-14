@@ -1,0 +1,372 @@
+
+@font-face{
+    font-family:Raleway-Bold;
+    src:url(../font/Raleway-Bold.ttf) format("truetype");
+} 
+@font-face{
+    font-family:Raleway;
+    src:url(../font/Raleway-Light.ttf) format("truetype");
+} 
+body{
+font-family: "Raleway";}
+.ui-bar-b{      
+background: #070707 !important;
+}		
+#header, .footer{
+    padding: 5px 0px;
+    background-image: url(../img/top.png) !important;
+    background-size: cover !important;
+}
+
+a {    text-decoration: none;
+    color: white !important;
+}
+span {
+	font-size: 12px;
+    color: black;
+    text-shadow: none;
+    text-align: center;
+	    text-align: center;
+    font-weight: 600;
+}
+
+.img-responsive {
+    display: initial !important;
+	}
+.row{
+    margin: 0px !important;;
+}
+
+.ui-header-fixed >img{
+width: 50px;
+float: left;
+
+}
+.ui-header-fixed >img:first-child{
+width: 130px;
+}
+.ui-header-fixed p{
+    text-shadow: none;
+    font-size: 140%;
+    font-weight: 100;
+    text-align: right;
+
+}
+
+.ui-listview > .ui-li-static, .ui-listview > .ui-li-divider, .ui-listview > li > a.ui-btn {
+    background-color: #6b6969 !important /*{a-bup-background-color}*/;
+    border-color: #ddd /*{a-bup-border}*/;
+    color: #333 /*{a-bup-color}*/;
+    text-shadow: none !important;
+}
+.img-responsive{
+    display: -webkit-inline-box;}
+	
+	
+.cargando{
+    height: 680px;
+    position: absolute;
+    z-index: 400;
+    background: white;
+    width: 100%;
+    text-align: center;
+
+}
+.cargando p:first-child
+{
+    margin-top: 30%;
+}
+
+.carousel-caption p {
+    font-size: 12px;
+    margin: 10px;
+    text-align: justify;
+}
+.carousel-caption h1 {
+    margin-top: 0px !important;
+    padding: 5px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1;
+    font-size: 25px;
+    font-family: "Raleway-bold";
+    color: #05d2ff;
+    text-shadow: 2px 1px 2px #000000;
+    padding-bottom: 5px;
+    background: rgba(255, 255, 255, 0.72);
+}
+.carousel-caption {
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    padding: 10px 0px 0px 0px!important;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+	 width:100%}
+ .ui-btn{ margin: 0px !important}
+ 
+.opciones{
+   
+    text-align: center;
+}
+.opciones>div{
+padding:0px; 
+}
+
+.titulo-seccion {
+    border: 2px #00c1ff solid;
+    padding: 5px;
+    background: #003998;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: #ffffff;
+    margin-top: 10px;
+    box-shadow: 1px 1px 5px black;
+    text-shadow: none;
+}
+
+
+
+/* -------------------------Noticias de radio sol--------------------*/
+ .logo{
+    text-align: center;
+}
+.web{
+color:black !important;
+}
+
+.titulo_primera {
+    color: #0aa5ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+}
+.box-titulo-secundarias{
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    padding: 10px 0px 0px 0px!important;
+    position: absolute;
+    z-index: 200;
+}
+.box-img-secundarias{
+    position: relative;
+}
+#primera>img, #secundarias>img{
+width:100%;
+}
+.box-img-secundarias>img{
+	width:100%;
+}
+#primera> .redes{
+    position: absolute;
+    z-index: 3; 
+}
+.redes{
+       float: right;
+}
+.copete {
+  margin: 0 0 10px;
+    font-size: 18px;
+    text-align: justify;
+    padding: 5px 15px;
+	    text-shadow: none;
+}
+.titulo_segundas {
+       color: #FFFFFF;
+    text-align: center;
+  font-size: 25px;
+    padding: 2px;
+    text-shadow: 3px 2px 8px black;
+    font-weight: 900;
+}
+
+.title-categoria {
+    color: #ffffff;
+    line-height: 48px;
+    text-align: CENTER;
+    background: #1987fd;
+    padding: 10px;
+}
+
+
+
+/*-------------------------- individual -------------------*/
+.copete_individual{
+	font-size: 14px;
+    text-align: justify;
+    padding: 13px;
+    font-style: italic;
+	}
+#noticia>img{ width:100% }
+.imgred:first-child{
+	padding:5px !important;
+}
+.imgred{
+	padding:10px; 
+	}
+/*** contacto **/
+#contacto{
+    padding-top: 79px;
+    background: black;
+    font-size: 15px;
+	 
+}
+
+
+.btn-contacto{
+    color: #fff !important;
+    background-color: #337ab7 !important;
+    border-color: #2e6da4 !important;
+    opacity: 1 !important;
+    z-index: 100 !important;
+    text-indent: 0 !important;
+	font-size: 16px !important;
+}
+.tituseccion{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 600;
+    color: #ca1212;
+    text-shadow: 0px 0px 2px black;
+}
+/*************/
+#noticias .col-xs-12{
+margin:0px;
+padding:0px}
+#noticias .redes{
+    position: absolute;}
+	
+#infogral .col-xs-12{
+margin:0px;
+padding:0px}
+#infogral .redes{
+    position: absolute;}
+/* --------------------------Iconos--------------------*/
+@font-face{
+	font-family:iconos;
+	src:url(../font/icomoon.ttf) format("truetype");
+} 
+
+.icon-menu:before{
+font-family: iconos;
+    content: "\e9cf";
+    color: white;
+    font-size: 20px;
+}
+.icon-back:before {
+    font-family: iconos;
+    content: "\e982";
+    color: white;
+    font-size: 20px;
+
+}
+.icon-right:before{
+font-family: iconos;
+    content: "\ea49";
+    color: white;
+    font-size: 25px;
+	    position: relative;
+    top: 90px;
+}
+.icon-left:before{
+font-family: iconos;
+    content: "\ea4b";
+    color: white;
+    font-size: 25px;
+	    position: relative;
+    top: 90px;
+}
+.icon-web:before{
+font-family: iconos;
+    content: "\e9da";
+    color: black;
+    font-size: 20px;
+	
+}
+.play:before {
+    font-family: iconos;
+    font-size: 205px;
+    content: "\ea1d";
+}
+.radio-whatsapp:before {
+ font-family: iconos;
+    content: "\ea97";
+	font-size:30px;
+	 border-radius: 40px;	
+	     color: #42BB1C;
+    background: white;
+	}
+	
+.radio-twitter:before {
+ font-family: iconos;
+     color: white;
+    content: "\e909";
+    font-size: 30px;
+    background: #22AADD;
+    padding: 2px;
+}
+
+
+.radio-facebook:before {
+ font-family: iconos;
+    content: "\e908";
+	color: #FFFFFF;
+    background: #3430DE;
+    font-size: 30px;
+}
+.icon-whatsapp:before {
+    font-family: iconos;
+    content: "\ea97";
+    font-size: 30px;
+    border-radius: 40px;
+    color: #FFFFFF;
+    background: #42BB1C;
+    padding: 5px;
+}
+	
+.icon-twitter:before {
+    font-family: iconos;
+    color: #FFFFFF;
+    content: "\e909";
+    font-size: 20px;
+    background: #22AADD;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.icon-facebook:before {
+    font-family: iconos;
+    content: "\e908";
+    color: #FFFFFF;
+    background: #3430DE;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+#contacto h4{text-shadow: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+	    font-size: 20px;}
+#contacto p{
+text-shadow: none;
+color: #ed3236;
+    font-weight: 800;
+
+}
+#secundarias-inicial .col-xs-6{
+padding:0px;
+}
+#secundarias-inicial .box-titulo-secundarias{
+       text-align: center;
+    text-shadow: none;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.54);
+    min-height: 70px;
+    font-family: Raleway;
+    font-size: 13px;
+	}
