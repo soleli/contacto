@@ -103,16 +103,16 @@ function cargar(id) {
 								"<p class='copete_individual'>"+data.copete+"</p> "
 								
 							);
-	
+		$("#noticia").append(
+		"<div class='pull-right'><div class='imgred col-xs-4'> <a  onclick='redsocial("+1+","+id+")'><span class='icon-whatsapp'></span></a></div>"+
+		"<div class='imgred  col-xs-4'><a onclick='redsocial("+2+","+id+")'><span class='icon-facebook'></span></a></div>"+
+		"<div class='imgred col-xs-4'><a onclick='redsocial("+3+","+id+")'><span class='icon-twitter'></span></a></div></div>"
+		);
 		$("#noticia").append( "<img  src='http://radiosolaimogasta.com.ar/imagenes/"+data.url+"_t.jpg'>"); 
 		
 		$("#noticia").append("<div class='copete'>"+data.cuerpo+"</div>");
 				
-		$("#iconos").append(
-		"<div class='imgred col-xs-4'> <a  onclick='redsocial("+1+","+id+")'><span class='icon-whatsapp'></span></a></div>"+
-		"<div class='imgred  col-xs-4'><a onclick='redsocial("+2+","+id+")'><span class='icon-facebook'></span></a></div>"+
-		"<div class='imgred col-xs-4'><a onclick='redsocial("+3+","+id+")'><span class='icon-twitter'></span></a></div>"
-		);
+		
 		
 	});
 
@@ -120,11 +120,14 @@ function cargar(id) {
  }
 
  function enviarcorreo(){
-             
+
              	var number = $("#nombre").val();
+             	var telefono = $("#telefono").val();
+             	/*var img = $("#archivo").files;
+				alert(img);*/
              	var message = $("#mensaje").val();
-				archivoValidacion = "http://tiempopopular.com.ar/json/formulario.php?jsoncallback=?"
-	$.getJSON( archivoValidacion, {nombre:number, mensaje:message})
+				archivoValidacion = "http://radiosolaimogasta.com.ar/appc/formulario.php?jsoncallback=?"
+	$.getJSON( archivoValidacion, {nombre:number, mensaje:message,telefono:telefono})
 	            .done(function(data) 
 	{
 	$("#alertaco").css("display","block");

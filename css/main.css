@@ -19,7 +19,7 @@ background: #070707 !important;
 }
 
 a {    text-decoration: none;
-    color: white !important;
+       color: #337ab7 !important;
 }
 span {
 	font-size: 12px;
@@ -209,7 +209,7 @@ width:100%;
 /*** contacto **/
 #contacto{
     padding-top: 79px;
-    background: black;
+    background: #ececec;
     font-size: 15px;
 	 
 }
@@ -354,7 +354,7 @@ font-family: iconos;
 	    font-size: 20px;}
 #contacto p{
 text-shadow: none;
-color: #ed3236;
+    color: #000000;
     font-weight: 800;
 
 }
