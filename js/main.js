@@ -79,6 +79,24 @@ function init()
 											$("#cargando").css("display","none");
 											
 										})
+	$.getJSON( archivoValidacion, {id:3})
+
+						.done(function(data2) {
+										
+										/*$("#cargando").css("display","none");*/
+											$(data2).each(function (index, data2) {
+												$("#banner").append(
+											
+														
+												"<div class='col-xs-6 col-sm-6'><img  class='img-responsive' src='http://radiosolaimogasta.com.ar/img/banner/"+data2.url+"'></div>"
+												
+												
+																	
+												);
+											});
+											$("#cargando").css("display","none");
+											
+										})
 	.error( function(data2) { 
 	$("#cargando").html("");
 	$("#cargando").append("<p>Error al cargar. </p>"); 
@@ -120,23 +138,34 @@ function cargar(id) {
  }
 
  function enviarcorreo(){
-
-             	var number = $("#nombre").val();
-             	var telefono = $("#telefono").val();
-             	/*var img = $("#archivo").files;
-				alert(img);*/
-             	var message = $("#mensaje").val();
-				archivoValidacion = "http://radiosolaimogasta.com.ar/appc/formulario.php?jsoncallback=?"
-	$.getJSON( archivoValidacion, {nombre:number, mensaje:message,telefono:telefono})
-	            .done(function(data) 
-	{
+	
+	var archivo = $('#archivo')[0].files[0];
+    var numer = $("#nombre").val();
+    var telefono = $("#telefono").val();
+	var message = $("#mensaje").val();
+	var data = new FormData();     
+	data.append('archivo',archivo);
+	data.append('nombre',numer);
+	data.append('telefono',telefono);
+	data.append('mensaje',message);
+	var url='http://radiosolaimogasta.com.ar/appc/formulario.php?jsoncallback=?';
+	$.ajax({
+            url:url, //Url a donde la enviaremos
+			type:'POST', //Metodo que usaremos
+			contentType:false, //Debe estar en false para que pase el objeto sin procesar
+            data:data, //Le pasamos el objeto que creamos con los archivos
+            processData:false, //Debe estar en false para que JQuery no procese los datos a enviar
+            cache:false
+				
+            })
+						
+		$("#alertaco").html(""); 
 	$("#alertaco").css("display","block");
-		$("#alertaco").append(
-								
-								data.ex
-								);              
-             }); 
-      } 
+	$("#alertaco").append("¡Su mensaje ha sido enviado correctamente!");     		
+      }
+
+
+	  
 	
 
                  
