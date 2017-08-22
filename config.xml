@@ -73,8 +73,6 @@
 	<gap:plugin name="com.lampa.startapp" version="0.0.6" source="npm" />
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<gap:platform name="winphone" />
-	
-	<gap:plugin name="org.apache.cordova.inappbrowser" source="npm"/>
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 
 </widget>
