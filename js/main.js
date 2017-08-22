@@ -107,7 +107,46 @@ function init()
 
 	
 	}
+function voto() 
+{
+	archivoValidacion = "http://www.radiosolaimogasta.com.ar/appc/voto.php?jsoncallback=?"
+	$("#pregunta").html (" "); 
+	$("#resultado").html (" "); 
 
+	$.getJSON( archivoValidacion, {id:1})
+
+						.done(function(data2) {
+										
+										/*$("#cargando").css("display","none");*/
+											$(data2).each(function (index, data2) {
+												$("#pregunta").append(
+												
+												"<p> ¿"+data2.pregunta+" ?</p>"
+												
+																	
+												)
+												$("#resultado").append(
+												
+												"<p> Si "+data2.si+"</p>"+
+												"<p> No "+data2.no+"</p>"
+												
+																	
+												);
+											});
+											$("#cargando").css("display","none");
+											
+										})
+	
+	.error( function(data2) { 
+	$("#cargando").html("");
+	$("#cargando").append("<p>Error al cargar. </p>"); 
+	$("#cargando").append("<p>Compruebe su conexion a internet.</p>"); 
+	$("#cargando").append("<button type='button' class='btn btn-success' onclick='init()'>Intertar de Nuevo</button>"); 
+	} )
+
+
+	
+	}
 function cargar(id) {
 	$("#noticia").html (" "); 
 	$("#iconos").html (" "); 
@@ -162,6 +201,30 @@ function cargar(id) {
 		$("#alertaco").html(""); 
 	$("#alertaco").css("display","block");
 	$("#alertaco").append("¡Su mensaje ha sido enviado correctamente!");     		
+      }
+	   
+function enviarvoto(){
+	
+
+    var resp = $(".resp:checked").val();
+
+	var data = new FormData();     
+	data.append('resp',resp);
+	var url='http://radiosolaimogasta.com.ar/appc/enviar_voto.php?jsoncallback=?';
+	$.ajax({
+            url:url, //Url a donde la enviaremos
+			type:'POST', //Metodo que usaremos
+			contentType:false, //Debe estar en false para que pase el objeto sin procesar
+            data:data, //Le pasamos el objeto que creamos con los archivos
+            processData:false, //Debe estar en false para que JQuery no procese los datos a enviar
+            cache:false
+				
+            })
+						
+		$("#msjvoto").html(""); 
+	$("#msjvoto").css("display","block");
+	$("#msjvoto").append("¡Su Voto ha sido enviado correctamente!");  
+ setTimeout("location.href='index.html'", 2000);
       }
 
 

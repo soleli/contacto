@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.lidera.larioja" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="radiosolaimogasta.com.ar" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Contacto</name>
     <description>
-         Aplicación de medios, noticias y actualidad de La Rioja.
+         Aplicación de noticias  de Aimogasta La Rioja.
     </description>
     <author email="clientes@wabes.com.ar" href="http://wabes.com.ar">
        Alaniz Eliana
@@ -71,12 +71,10 @@
 	<plugin name="cordova-plugin-appavailability" source="npm" />
 
 	<gap:plugin name="com.lampa.startapp" version="0.0.6" source="npm" />
-	<plugin name="phonegap-plugin-push" spec="1.6.0">
-			<param name="SENDER_ID" value="275015233935" />
-	</plugin>
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<gap:platform name="winphone" />
 	
+	<gap:plugin name="org.apache.cordova.inappbrowser" source="npm"/>
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 
 </widget>

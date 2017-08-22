@@ -373,3 +373,16 @@ padding:0px;
 #banner>.col-xs-6{
 padding:0px;
 }
+.box-pregunta
+{
+    background: #000000;
+    padding: 20px;
+}
+#pregunta{
+    background: #0084ff;
+    padding: 10px;
+    text-shadow: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
