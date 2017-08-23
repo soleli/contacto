@@ -17,8 +17,8 @@
 		<script type="text/javascript" src="js/main.js"></script>	
 		
        <script>
-		function twitter(){appAvailability.check("com.twitter.android",function(){window.open("twitter://user?screen_name=lidera_","_system","location=yes")},function(){window.open("https://twitter.com/lidera_","_system","location=yes")})}
-		function facebook(){appAvailability.check("com.facebook.katana",function(){window.open("fb://facebook.com/Contacto-CON-La-Noticia-1598648800448927/?ref=br_rs","_system","location=yes")},function(){window.open("https://www.facebook.com/Contacto-CON-La-Noticia-1598648800448927/","_system","location=yes")})}</script>
+		function twitter(){appAvailability.check("com.twitter.android",function(){window.open("twitter://user?screen_name=DanielContacto1","_system","location=yes")},function(){window.open("https://twitter.com/DanielContacto1","_system","location=yes")})}
+		function facebook(){appAvailability.check("com.facebook.katana",function(){window.open("fb://www.facebook.com/Contacto-Noticias-117345042223438/","_system","location=yes")},function(){window.open("https://www.facebook.com/Contacto-Noticias-117345042223438/","_system","location=yes")})}</script>
 	   </script>
 		
     </head>
@@ -268,12 +268,12 @@
 						<input type="text"  class="form-control"  id="telefono" placeholder="Ingrese su Teléfono">
 					</div>
 					<div class="form-group">
-						<textarea name="" id="mensaje" placeholder="Ingrese su mensaje" rows="8" ></textarea>
+						<textarea name="" id="mensaje" placeholder="Ingrese su mensaje" rows="8"  ></textarea>
 					</div>
 					<div class="form-group">
-							<label for="exampleInputFile">Adjuntar CV </label>
+							<label for="exampleInputFile">Adjuntar fotos o documentos </label>
 							<input type="file" class="form-control-file" name="archivo"  id="archivo"  aria-describedby="fileHelp">
-							<small id="fileHelp" class="form-text text-muted">(doc,docx,pdf).</small>
+							<small id="fileHelp" class="form-text text-muted">(doc,docx,pdf,jpg,png).</small>
 						</div>
 				   <div class="form-group">
 						<input id="btnDefaultSMS"  class="btn-contacto" onclick="enviarcorreo()" type="submit"   value="Enviar" >
@@ -357,7 +357,7 @@
 			
 			function whatsapp(){
 			
-			cordova.plugins.Whatsapp.send("+5493804499197");
+			cordova.plugins.Whatsapp.send("+5493804563706");
 			}
 			
 			function cargarview(){
