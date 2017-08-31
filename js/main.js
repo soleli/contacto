@@ -228,7 +228,90 @@ function enviarvoto(){
       }
 
 
-	  
+ function todas() 
+				{
+					$("#primera").html("");
+					$("#secundarias").html("");
+						archivoValidacion = "http://www.radiosolaimogasta.com.ar/appc/principal.php?jsoncallback=?"
+
+
+					$.getJSON( archivoValidacion, {id:1})
+
+					.done(function(data2) {
+					
+					/*$("#cargando").css("display","none");*/
+						$(data2).each(function (index, data2) {
+							$("#primera").append(
+						
+							"<a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+							"<H1 class='titulo_primera'>"+data2.titulo+"</h1>"+
+							"<div style='float: right;   position: absolute;'>"+
+								"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+								"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+								"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+							"<img class='img-responsive' src='http://radiosolaimogasta.com.ar/imagenes/"+data2.url+"_400.jpg'>"+
+							" </a> <hr>"
+							);
+						});
+						$("#cargando2").css("display","none");
+						
+					})
+	
+									.error( function(data2) { 
+									$("#cargando2").css("display","block");
+									$("#cargando2").append("<p>Compruebe su conexion a internet</p>"); } )
+
+					$.getJSON( archivoValidacion, {id:2})
+
+						.done(function(data2) {
+										
+										/*$("#cargando").css("display","none");*/
+											$(data2).each(function (index, data2) {
+												$("#secundarias").append(
+											"<span class='title-categoria'>LOCALES</span>"+			
+															"<div class='row'><a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+														
+												"<div class='col-xs-12 col-sm-12'><div class='box-img-secundarias'><img  class='img-responsive' src='http://radiosolaimogasta.com.ar/imagenes/"+data2.url+"_400.jpg'></div>"+
+												"<div class='box-titulo-secundarias'><H1 class='titulo_segundas'>"+data2.titulo+"</h1></div></div>"+
+												"<div class='redes'>"+
+													"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+													"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+													"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+												"</a></div> <hr>"
+																	
+												);
+											});
+											$("#cargando").css("display","none");
+											
+										})
+											$.getJSON( archivoValidacion, {id:3})
+
+										.done(function(data2) {
+									
+										/*$("#cargando").css("display","none");*/
+											$(data2).each(function (index, data2) {
+										
+												$("#infogral").append(
+												"<span class='title-categoria'>PROVINCIALES</span>"+			
+															"<div class='row'><a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+														
+												"<div class='col-xs-12 col-sm-12'><div class='box-img-secundarias'><img  class='img-responsive' src='http://radiosolaimogasta.com.ar/imagenes/"+data2.url+"_400.jpg'></div>"+
+												"<div class='box-titulo-secundarias'><H1 class='titulo_segundas'>"+data2.titulo+"</h1></div></div>"+
+												"<div class='redes'>"+
+													"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+													"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+													"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+												"</a></div> <hr>"
+																	
+																	);
+											
+											
+											});
+											$("#cargando").css("display","none");
+										
+										})
+		
+				}	
 	
 
                  
